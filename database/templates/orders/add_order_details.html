@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/orders/" method="post">
+	{% csrf_token %}
+	{{ order_details_form.management_form }}
+<table>
+<div class="form-group col-md-11">
+	{{ order_details_form.as_p }}
+</div>
+</table>
+
+	<input type="submit" value="Submit" class="btn btn-primary col-md-3" />
+</form>
+
+
+{% endblock content %}
